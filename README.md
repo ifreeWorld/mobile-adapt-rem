@@ -103,3 +103,7 @@ module.exports = {
 
 # 参考文档
 - [**frozenui demo**](http://frozenui.github.io/frozenui/demo/index.html)
+- [**lib-flexible**](https://github.com/amfe/lib-flexible)
+- [**postcss-pxtorem**](https://github.com/cuth/postcss-pxtorem)
+- [**拿到一份设计稿，我该如何进行移动端开发**](https://juejin.im/post/5d736747e51d4561ff66688c)
+- [**前端基础知识概述 -- 移动端开发的屏幕、图像、字体与布局的兼容适配**](https://juejin.im/post/5d70747cf265da03e16897c8)
