@@ -101,6 +101,25 @@ module.exports = {
 }
 ```
 
+### retina 屏下的1px线的实现方案
+设计师想要的 retina 下 **border: 1px**，其实是 1 物理像素宽，而不是 1 CSS 像素宽度，对于 CSS 而言：
+
+- 在 dpr = 1 时，此时 1 物理像素等于 1 CSS 像素宽度
+- 在 dpr = 2 时，此时 1 物理像素等于 0.5 CSS 宽度像素，可以认为 **border-width: 1px** 这里的 1px 其实是 1 CSS像素宽度，等于 2 像素物理宽度，设计师其实想要的是 **border-width: 0.5px**
+- 在 dpr = 3 时，此时 1 物理像素等于 0.33 CSS 宽度像素，设计师其实想要的是 **border: 0.333px**
+
+然而，并不是所有手机浏览器都能识别 border-width: 0.5px，在 iOS7 以下，Android 等其他系统里，小于 1px 的单位会被当成为 0px 处理，那么如何实现这 0.5px、0.33px 呢？
+
+三种方法实现：
+
+- 使用渐变实现，使用两种颜色填充1px宽内容
+- 使用缩放实现，对 1px 高度线条进行0.5/0.33倍缩放
+- base64 编码实现
+
+[**demo**](src/views/retina.vue)
+
+
+
 # 参考文档
 - [**frozenui demo**](http://frozenui.github.io/frozenui/demo/index.html)
 - [**lib-flexible**](https://github.com/amfe/lib-flexible)

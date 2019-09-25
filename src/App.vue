@@ -2,8 +2,12 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/retina">retina 屏下的1px线的实现</router-link>
     </div>
+    <a href="https://juejin.im/post/5d70747cf265da03e16897c8" target="_blank"
+      >前端基础知识概述 -- 移动端开发的屏幕、图像、字体与布局的兼容适配
+    </a>
     <router-view />
   </div>
 </template>
@@ -20,6 +24,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  // .pxToRem(font-size, 37.5);
+  font-size: 37.5px;
   color: #2c3e50;
 }
 #nav {
@@ -47,6 +53,8 @@ $baseFontSize: 750;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  // font-size: pxToRem(37.5);
+  font-size: 37.5px;
   color: #2c3e50;
 }
 #nav {
